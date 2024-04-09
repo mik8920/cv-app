@@ -1,0 +1,41 @@
+:root {
+  --font-family: arial, helvetica, sans-serif;
+  --font-h3-size: 1.5em;
+  --font-color: rgba(0, 0, 0, 0.815);
+  --font-label-size: 1em;
+  --font-h3-color: rgba(0, 0, 0, 0.849);
+  --font-borer-color: rgba(68, 68, 68, 0.637);
+}
+
+h3 {
+  font-size: var(--font-h3-size);
+  color: var(--font-h3-color);
+  font-family: var(--font-family);
+  margin: 0;
+  margin-top: 12px;
+}
+
+.preview-container-general-info,
+.preview-container-practical-exp,
+.preview-container-edu-exp {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-bottom: 1px solid var(--font-borer-color);
+}
+
+p {
+  font-family: var(--font-family);
+  font-size: var(--font-label-size);
+  color: var(--font-color);
+  margin: 0px;
+}
+
+p:last-child {
+  margin-bottom: 16px;
+}
+
+.preview-container {
+  border: 1px solid grey;
+  padding:32px;
+}
