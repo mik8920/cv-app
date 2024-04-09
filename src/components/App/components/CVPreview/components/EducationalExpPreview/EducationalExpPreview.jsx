@@ -6,7 +6,7 @@ export default function EducationalExpPreview({
   studyDate,
 }) {
   return (
-    <div class="preview-container-edu-exp">
+    <div className="preview-container-edu-exp">
       <h3>Educational Experience Preview</h3>
 
       <p>

@@ -40,13 +40,13 @@ export default function PracticalExp({
 
         <div className="form-field">
           <label htmlFor="job-responsibilities">Job Responsibilities:</label>
-          <input
+          <textarea
             type="text"
             value={jobResponsibilities}
             id="job-responsibilities"
             onChange={(e) => setJobResponsibilities(e.target.value)}
             placeholder="Debugging, software developing, etc."
-          ></input>
+          ></textarea>
         </div>
 
         <div className="form-field">

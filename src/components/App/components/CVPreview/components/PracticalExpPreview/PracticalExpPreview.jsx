@@ -9,7 +9,7 @@ export default function PracticalExpPreview(
   endWorkDate}
 ) {
   return (
-    <div class="preview-container-practical-exp">
+    <div className="preview-container-practical-exp">
       <h3>Practical Experience Preview</h3>
       <p>
         <strong>Company:</strong> {companyName}

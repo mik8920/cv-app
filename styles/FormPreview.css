@@ -3,7 +3,7 @@
   --font-h3-size: 1.5em;
   --font-color: rgba(0, 0, 0, 0.815);
   --font-label-size: 1em;
-  --font-h3-color: rgba(0, 0, 0, 0.849);
+  --font-h3-color:rgba(2, 2, 36, 0.836);
   --font-borer-color: rgba(68, 68, 68, 0.637);
 }
 
@@ -39,3 +39,5 @@ p:last-child {
   border: 1px solid grey;
   padding:32px;
 }
+
+
