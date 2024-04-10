@@ -1,21 +1,20 @@
+/* eslint-disable react/prop-types */
 import "../../../../../../../styles/FormPreview.css";
 
-import { Fragment } from "react";
-
-export default function GeneralInfoPreview({ fullName, email, phoneNumber }) {
+export default function GeneralInfoPreview({ generalInfo }) {
   return (
     <div className="preview-container-general-info">
       <h3>General Information Preview</h3>
       <p>
-        <strong>Full Name: </strong> {fullName}
+        <strong>Full Name: </strong> {generalInfo.fullName}
       </p>
 
       <p>
-        <strong>Email: </strong> {email}
+        <strong>Email: </strong> {generalInfo.email}
       </p>
 
       <p>
-        <strong>Phone Number: </strong> {phoneNumber}
+        <strong>Phone Number: </strong> {generalInfo.phoneNumber}
       </p>
     </div>
   );

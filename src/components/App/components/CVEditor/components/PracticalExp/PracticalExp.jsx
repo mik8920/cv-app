@@ -1,17 +1,7 @@
+/* eslint-disable react/prop-types */
 import "../../../../../../../styles/FormEdit.css";
 
-export default function PracticalExp({
-  companyName,
-  setCompanyName,
-  positionTitle,
-  setPositionTitle,
-  jobResponsibilities,
-  setJobResponsibilities,
-  startWorkDate,
-  setStartWorkDate,
-  endWorkDate,
-  setEndWorkDate,
-}) {
+export default function PracticalExp({ practicalExp, setPracticalExp }) {
   return (
     <div className="form-container-practical-exp">
       <h3>Practical Experience</h3>
@@ -20,9 +10,11 @@ export default function PracticalExp({
           <label htmlFor="compamy-name">Company Name:</label>
           <input
             type="text"
-            value={companyName}
+            value={practicalExp.companyName}
             id="company-name"
-            onChange={(e) => setCompanyName(e.target.value)}
+            onChange={(e) =>
+              setPracticalExp({ ...PracticalExp, compamyName: e.target.value })
+            }
             placeholder="Amazon"
           ></input>
         </div>
@@ -31,9 +23,14 @@ export default function PracticalExp({
           <label htmlFor="position-title">Position Title:</label>
           <input
             type="text"
-            value={positionTitle}
+            value={practicalExp.positionTitle}
             id="position-title"
-            onChange={(e) => setPositionTitle(e.target.value)}
+            onChange={(e) =>
+              setPracticalExp({
+                ...PracticalExp,
+                positionTitle: e.target.value,
+              })
+            }
             placeholder="Full Stack Developer"
           ></input>
         </div>
@@ -42,9 +39,14 @@ export default function PracticalExp({
           <label htmlFor="job-responsibilities">Job Responsibilities:</label>
           <textarea
             type="text"
-            value={jobResponsibilities}
+            value={practicalExp.jobResponsibilities}
             id="job-responsibilities"
-            onChange={(e) => setJobResponsibilities(e.target.value)}
+            onChange={(e) =>
+              setPracticalExp({
+                ...PracticalExp,
+                jobResponsibilities: e.target.value,
+              })
+            }
             placeholder="Debugging, software developing, etc."
           ></textarea>
         </div>
@@ -53,18 +55,25 @@ export default function PracticalExp({
           <label htmlFor="start-date">Start Date:</label>
           <input
             type="date"
-            value={startWorkDate}
+            value={practicalExp.startWorkDate}
             id="start-date"
-            onChange={(e) => setStartWorkDate(e.target.value)}
+            onChange={(e) =>
+              setPracticalExp({
+                ...PracticalExp,
+                startWorkDate: e.target.value,
+              })
+            }
           ></input>
         </div>
         <div className="form-field">
           <label htmlFor="end-date">End Date:</label>
           <input
             type="date"
-            value={endWorkDate}
+            value={practicalExp.endWorkDate}
             id="end-date"
-            onChange={(e) => setEndWorkDate(e.target.value)}
+            onChange={(e) =>
+              setPracticalExp({ ...PracticalExp, endWorkDate: e.target.value })
+            }
           ></input>
         </div>
       </form>

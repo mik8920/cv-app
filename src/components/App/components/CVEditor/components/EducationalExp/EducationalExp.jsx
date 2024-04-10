@@ -1,13 +1,7 @@
+/* eslint-disable react/prop-types */
 import "../../../../../../../styles/FormEdit.css";
 
-export default function EducationalExp({
-  schoolName,
-  setSchoolName,
-  studyTitle,
-  setStudyTitle,
-  studyDate,
-  setStudyDate,
-}) {
+export default function EducationalExp({ educationalExp, setEducationalExp }) {
   return (
     <div className="form-container-edu-exp">
       <h3>Educational Experience</h3>
@@ -16,9 +10,14 @@ export default function EducationalExp({
           <label htmlFor="school-name">School Name:</label>
           <input
             type="text"
-            value={schoolName}
+            value={educationalExp.schoolName}
             id="school-name"
-            onChange={(e) => setSchoolName(e.target.value)}
+            onChange={(e) =>
+              setEducationalExp({
+                ...educationalExp,
+                schoolName: e.target.value,
+              })
+            }
             placeholder="MIT"
           ></input>
         </div>
@@ -27,9 +26,14 @@ export default function EducationalExp({
           <label htmlFor="study-title">Title of study:</label>
           <input
             type="text"
-            value={studyTitle}
+            value={educationalExp.studyTitle}
             id="study-title"
-            onChange={(e) => setStudyTitle(e.target.value)}
+            onChange={(e) =>
+              setEducationalExp({
+                ...educationalExp,
+                studyTitle: e.target.value,
+              })
+            }
             placeholder="BSc Computer Science"
           ></input>
         </div>
@@ -38,9 +42,14 @@ export default function EducationalExp({
           <label htmlFor="study-date">Date of study:</label>
           <input
             type="date"
-            value={studyDate}
+            value={educationalExp.studyDate}
             id="study-date"
-            onChange={(e) => setStudyDate(e.target.value)}
+            onChange={(e) =>
+              setEducationalExp({
+                ...educationalExp,
+                studyDate: e.target.value,
+              })
+            }
           ></input>
         </div>
       </form>

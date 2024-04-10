@@ -1,63 +1,30 @@
-import "../../../../../styles/Button.css";
-import "../../../../../styles/FormEdit.css";
+/* eslint-disable react/prop-types */
+import "@styles/styles/Button.css";
+import "@styles/styles/FormEdit.css";
 
 import EducationalExp from "./components/EducationalExp/EducationalExp";
 import GeneralInfo from "./components/GeneralInfo/GeneralInfo";
 import PracticalExp from "./components/PracticalExp/PracticalExp";
 export default function CVEditor({
   handleEditing,
-  fullName,
-  setFullName,
-  email,
-  setEmail,
-  phoneNumber,
-  setPhoneNumber,
-  schoolName,
-  setSchoolName,
-  studyTitle,
-  setStudyTitle,
-  studyDate,
-  setStudyDate,
-  companyName,
-  setCompanyName,
-  positionTitle,
-  setPositionTitle,
-  jobResponsibilities,
-  setJobResponsibilities,
-  startWorkDate,
-  setStartWorkDate,
-  endWorkDate,
-  setEndWorkDate,
+
+  generalInfo,
+  setGeneralInfo,
+  educationalExp,
+  setEducationalExp,
+  practicalExp,
+  setPracticalExp,
 }) {
   return (
     <section className="edit-container">
-      <GeneralInfo
-        fullName={fullName}
-        setFullName={setFullName}
-        email={email}
-        setEmail={setEmail}
-        phoneNumber={phoneNumber}
-        setPhoneNumber={setPhoneNumber}
-      />
+      <GeneralInfo generalInfo={generalInfo} setGeneralInfo={setGeneralInfo} />
       <EducationalExp
-        schoolName={schoolName}
-        setSchoolName={setSchoolName}
-        studyTitle={studyTitle}
-        setStudyTitle={setStudyTitle}
-        studyDate={studyDate}
-        setStudyDate={setStudyDate}
+        educationalExp={educationalExp}
+        setEducationalExp={setEducationalExp}
       />
       <PracticalExp
-        companyName={companyName}
-        setCompanyName={setCompanyName}
-        positionTitle={positionTitle}
-        setPositionTitle={setPositionTitle}
-        jobResponsibilities={jobResponsibilities}
-        setJobResponsibilities={setJobResponsibilities}
-        startWorkDate={startWorkDate}
-        setStartWorkDate={setStartWorkDate}
-        endWorkDate={endWorkDate}
-        setEndWorkDate={setEndWorkDate}
+        practicalExp={practicalExp}
+        setPracticalExp={setPracticalExp}
       />
 
       <button onClick={handleEditing}>Preview</button>

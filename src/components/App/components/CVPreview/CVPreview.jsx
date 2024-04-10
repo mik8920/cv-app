@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "../../../../../styles/Button.css";
 import "../../../../../styles/FormPreview.css";
 import EducationalExpPreview from "./components/EducationalExpPreview/EducationalExpPreview";
@@ -6,37 +7,16 @@ import PracticalExpPreview from "./components/PracticalExpPreview/PracticalExpPr
 
 export default function CVPreview({
   handleEditing,
-  fullName,
-  email,
-  phoneNumber,
-  schoolName,
-  studyTitle,
-  studyDate,
-  companyName,
-  positionTitle,
-  jobResponsibilities,
-  startWorkDate,
-  endWorkDate,
+
+  generalInfo,
+  educationalExp,
+  practialExp,
 }) {
   return (
     <section className="preview-container">
-      <GeneralInfoPreview
-        fullName={fullName}
-        email={email}
-        phoneNumber={phoneNumber}
-      />
-      <EducationalExpPreview
-        schoolName={schoolName}
-        studyTitle={studyTitle}
-        studyDate={studyDate}
-      />
-      <PracticalExpPreview
-        companyName={companyName}
-        positionTitle={positionTitle}
-        jobResponsibilities={jobResponsibilities}
-        startWorkDate={startWorkDate}
-        endWorkDate={endWorkDate}
-      />
+      <GeneralInfoPreview generalInfo={generalInfo} />
+      <EducationalExpPreview educationalExp={educationalExp} />
+      <PracticalExpPreview practialExp={practialExp} />
 
       <button onClick={handleEditing}>Edit</button>
     </section>

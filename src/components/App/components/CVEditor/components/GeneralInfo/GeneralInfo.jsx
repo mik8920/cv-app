@@ -1,24 +1,20 @@
+/* eslint-disable react/prop-types */
 import "../../../../../../../styles/FormEdit.css";
 
-export default function GeneralInfo({
-  fullName,
-  setFullName,
-  email,
-  setEmail,
-  phoneNumber,
-  setPhoneNumber,
-}) {
+export default function GeneralInfo({ generalInfo, setGeneralInfo }) {
   return (
     <div className="form-container-general-info">
-      <h3>General Information Preview</h3>
+      <h3>General Information</h3>
       <form id="cv-form" action="" method="POST">
         <div className="form-field">
           <label htmlFor="full-name">Full Name:</label>
           <input
             type="text"
-            value={fullName}
+            value={generalInfo.fullName}
             id="full-name"
-            onChange={(e) => setFullName(e.target.value)}
+            onChange={(e) =>
+              setGeneralInfo({ ...generalInfo, fullName: e.target.value })
+            }
             placeholder="Hellen Papadakis"
           ></input>
         </div>
@@ -27,9 +23,11 @@ export default function GeneralInfo({
           <label htmlFor="email">Email:</label>
           <input
             type="email"
-            value={email}
+            value={generalInfo.email}
             id="email"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) =>
+              setGeneralInfo({ ...generalInfo, email: e.target.value })
+            }
             placeholder="helenpapadakis@mail.com"
           ></input>
         </div>
@@ -38,9 +36,11 @@ export default function GeneralInfo({
           <label htmlFor="phone-number">Phone Number:</label>
           <input
             type="tel"
-            value={phoneNumber}
+            value={generalInfo.phoneNumber}
             id="phone-number"
-            onChange={(e) => setPhoneNumber(e.target.value)}
+            onChange={(e) =>
+              setGeneralInfo({ ...generalInfo, phoneNumber: e.target.value })
+            }
             placeholder="+306978836512"
           ></input>
         </div>
