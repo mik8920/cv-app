@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import "@styles/styles/FormEdit.css";
-import { Fragment } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -38,12 +37,13 @@ export default function PracticalExp({ practicalExp, setPracticalExp }) {
     <div className="form-container-practical-exp">
       <div style={{display:'flex',justifyContent:'space-between'}}>
       <h3>Practical Experience</h3>
-      <button onClick={handleExpAdd}>Add Experience</button>
+      <button className="addBtn" onClick={handleExpAdd}>+</button>
       </div>
       <form id="cv-form" action="" method="POST">
           {practicalExp.map((exp,index) => {
             return (
-              <Fragment key={exp.id}>
+              
+              <div style={index > 0 ? {borderTop: '1px solid lightgrey'} : {}} key={exp.id}>
                             <div className="form-field">
                             <label htmlFor="compamy-name">Company Name:</label>
                             <input
@@ -110,8 +110,8 @@ export default function PracticalExp({ practicalExp, setPracticalExp }) {
                               }
                             ></input>
                           </div>
-                          {practicalExp.length > 1  && (<button onClick={() => {handleExpRemoval(index)}}>Remove</button>)}
-                        </Fragment>)
+                          {practicalExp.length > 1  && (<button className="delBtn" onClick={() => {handleExpRemoval(index)}}>Remove</button>)}
+                        </div>)
             })}
       </form>
     </div>

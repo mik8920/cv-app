@@ -2,8 +2,9 @@
   --font-family: arial, helvetica, sans-serif;
   --font-color: rgba(0, 0, 0, 0.685);
   --button-background-color: rgba(2, 2, 36, 0.836);
-  --button-font-color:  rgb(255, 255, 255);
+  --button-font-color: rgb(255, 255, 255);
   --button-font-size: 1.5em;
+  --secondBtn-font-size: 1em;
 }
 
 button {
@@ -15,5 +16,11 @@ button {
   font-size: var(--button-font-size);
   font-weight: 600;
   cursor: pointer;
-  margin:16px;
+  margin: 16px;
+}
+
+.addBtn, .delBtn {
+  border: 1px solid var(--button-background-color);
+text-align: left;
+font-size: var(--secondBtn-font-size)
 }

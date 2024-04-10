@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import "@styles/styles/FormEdit.css";
-import { Fragment } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 export default function EducationalExp({ educationalExp, setEducationalExp }) {
@@ -34,12 +33,12 @@ export default function EducationalExp({ educationalExp, setEducationalExp }) {
     <div className="form-container-edu-exp">
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <h3>Educational Experience</h3>
-        <button onClick={handleExpAdd}>Add Experience</button>
+        <button className="addBtn" onClick={handleExpAdd}>+</button>
       </div>
       <form id="cv-form" action="" method="POST">
         {educationalExp.map((exp, index) => {
           return (
-            <Fragment key={exp.id}>
+            <div style={index > 0 ? {borderTop: '1px solid lightgrey'} : {}} key={exp.id}>
               <div className="form-field">
                 <label htmlFor="school-name">School Name:</label>
                 <input
@@ -72,7 +71,7 @@ export default function EducationalExp({ educationalExp, setEducationalExp }) {
                 ></input>
               </div>
               {educationalExp.length > 1 && (
-                <button
+                <button className="delBtn"
                   onClick={() => {
                     handleExpRemoval(index);
                   }}
@@ -80,7 +79,7 @@ export default function EducationalExp({ educationalExp, setEducationalExp }) {
                   Remove
                 </button>
               )}
-            </Fragment>
+            </div>
           );
         })}
       </form>
