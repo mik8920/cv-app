@@ -1,15 +1,16 @@
 /* eslint-disable react/prop-types */
 import "@styles/styles/FormPreview.css";
+import { Fragment } from "react";
 
 export default function EducationalExpPreview({ educationalExp }) {
   return (
     <div className="preview-container-edu-exp">
       <h3>Educational Experience Preview</h3>
-      {educationalExp.map((exp,index) => {
+      {educationalExp.map((exp) => {
         return (
-          <div style={index === 0 ? {borderTop: '1px solid black'} : {}} key={exp.id}>
+          <Fragment key={exp.id}>
             <p>
-              <strong>Company Name:</strong> {exp.companyName}
+              <strong>Company Name:</strong> {exp.schoolName}
             </p>
 
             <p>
@@ -19,7 +20,7 @@ export default function EducationalExpPreview({ educationalExp }) {
             <p>
               <strong>Date of study:</strong> {exp.studyDate}
             </p>
-          </div>
+          </Fragment>
         );
       })}
     </div>
