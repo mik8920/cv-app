@@ -10,11 +10,12 @@ function App() {
     email: "",
     phoneNumber: "",
   });
-  const [educationalExp, setEducationalExp] = useState({
+  const [educationalExp, setEducationalExp] = useState([{
+    id:uuidv4(),
     schoolName: "",
     studyTitle: "",
     studyDate: "",
-  });
+  }]);
   const [practicalExp, setPracticalExp] = useState([{
     id:uuidv4(),
     companyName: "",

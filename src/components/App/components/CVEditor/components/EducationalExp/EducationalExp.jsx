@@ -1,57 +1,88 @@
 /* eslint-disable react/prop-types */
 import "@styles/styles/FormEdit.css";
+import { Fragment } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export default function EducationalExp({ educationalExp, setEducationalExp }) {
+  const handleExpEdit = (e, expId) => {
+    const newEduExp = educationalExp.map((exp) => {
+      if (exp.id === expId) {
+        return { ...exp, [e.target.name]: e.target.value };
+      }
+      return { ...exp };
+    });
+    setEducationalExp(newEduExp);
+  };
+
+  const handleExpAdd = () => {
+    const newEduExp = [...educationalExp];
+    newEduExp.push({
+      id: uuidv4(),
+      schoolName: "",
+      studyTitle: "",
+      studyDate: "",
+    });
+    setEducationalExp(newEduExp);
+  };
+
+  const handleExpRemoval = (expId) => {
+    const newEduExp = educationalExp.filter((_, index) => expId !== index);
+    setEducationalExp(newEduExp);
+  };
+
   return (
     <div className="form-container-edu-exp">
-      <h3>Educational Experience</h3>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <h3>Educational Experience</h3>
+        <button onClick={handleExpAdd}>Add Experience</button>
+      </div>
       <form id="cv-form" action="" method="POST">
-        <div className="form-field">
-          <label htmlFor="school-name">School Name:</label>
-          <input
-            type="text"
-            value={educationalExp.schoolName}
-            id="school-name"
-            onChange={(e) =>
-              setEducationalExp({
-                ...educationalExp,
-                schoolName: e.target.value,
-              })
-            }
-            placeholder="MIT"
-          ></input>
-        </div>
+        {educationalExp.map((exp, index) => {
+          return (
+            <Fragment key={exp.id}>
+              <div className="form-field">
+                <label htmlFor="school-name">School Name:</label>
+                <input
+                  type="text"
+                  value={educationalExp.schoolName}
+                  id="school-name"
+                  onChange={(e) => handleExpEdit(e, exp.id)}
+                  placeholder="MIT"
+                ></input>
+              </div>
 
-        <div className="form-field">
-          <label htmlFor="study-title">Title of study:</label>
-          <input
-            type="text"
-            value={educationalExp.studyTitle}
-            id="study-title"
-            onChange={(e) =>
-              setEducationalExp({
-                ...educationalExp,
-                studyTitle: e.target.value,
-              })
-            }
-            placeholder="BSc Computer Science"
-          ></input>
-        </div>
+              <div className="form-field">
+                <label htmlFor="study-title">Title of study:</label>
+                <input
+                  type="text"
+                  value={educationalExp.studyTitle}
+                  id="study-title"
+                  onChange={(e) => handleExpEdit(e, exp.id)}
+                  placeholder="BSc Computer Science"
+                ></input>
+              </div>
 
-        <div className="form-field">
-          <label htmlFor="study-date">Date of study:</label>
-          <input
-            type="date"
-            value={educationalExp.studyDate}
-            id="study-date"
-            onChange={(e) =>
-              setEducationalExp({
-                ...educationalExp,
-                studyDate: e.target.value,
-              })
-            }
-          ></input>
-        </div>
+              <div className="form-field">
+                <label htmlFor="study-date">Date of study:</label>
+                <input
+                  type="date"
+                  value={educationalExp.studyDate}
+                  id="study-date"
+                  onChange={(e) => handleExpEdit(e, exp.id)}
+                ></input>
+              </div>
+              {educationalExp.length > 1 && (
+                <button
+                  onClick={() => {
+                    handleExpRemoval(index);
+                  }}
+                >
+                  Remove
+                </button>
+              )}
+            </Fragment>
+          );
+        })}
       </form>
     </div>
   );

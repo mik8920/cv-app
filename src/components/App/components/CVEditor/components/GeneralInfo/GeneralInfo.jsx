@@ -2,6 +2,12 @@
 import "@styles/styles/FormEdit.css";
 
 export default function GeneralInfo({ generalInfo, setGeneralInfo }) {
+  const handleEdit = (e) => {
+    setGeneralInfo( {...generalInfo, [e.target.name]: e.target.value });
+  };
+
+
+   
   return (
     <div className="form-container-general-info">
       <h3>General Information</h3>
@@ -11,10 +17,9 @@ export default function GeneralInfo({ generalInfo, setGeneralInfo }) {
           <input
             type="text"
             value={generalInfo.fullName}
+            name={"fullName"}
             id="full-name"
-            onChange={(e) =>
-              setGeneralInfo({ ...generalInfo, fullName: e.target.value })
-            }
+            onChange={handleEdit}
             placeholder="Hellen Papadakis"
           ></input>
         </div>
@@ -24,10 +29,9 @@ export default function GeneralInfo({ generalInfo, setGeneralInfo }) {
           <input
             type="email"
             value={generalInfo.email}
+            name={"email"}
             id="email"
-            onChange={(e) =>
-              setGeneralInfo({ ...generalInfo, email: e.target.value })
-            }
+            onChange={handleEdit}
             placeholder="helenpapadakis@mail.com"
           ></input>
         </div>
@@ -37,10 +41,9 @@ export default function GeneralInfo({ generalInfo, setGeneralInfo }) {
           <input
             type="tel"
             value={generalInfo.phoneNumber}
+            name={"phoneNumber"}
             id="phone-number"
-            onChange={(e) =>
-              setGeneralInfo({ ...generalInfo, phoneNumber: e.target.value })
-            }
+            onChange={handleEdit}
             placeholder="+306978836512"
           ></input>
         </div>
