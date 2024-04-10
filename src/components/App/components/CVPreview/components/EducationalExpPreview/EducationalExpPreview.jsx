@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import "../../../../../../../styles/FormPreview.css";
+import "@styles/styles/FormPreview.css";
 
 export default function EducationalExpPreview({ educationalExp }) {
   return (
@@ -7,7 +7,7 @@ export default function EducationalExpPreview({ educationalExp }) {
       <h3>Educational Experience Preview</h3>
 
       <p>
-        <strong>Full Name:</strong> {educationalExp.schoolName}
+        <strong>Company Name:</strong> {educationalExp.schoolName}
       </p>
 
       <p>

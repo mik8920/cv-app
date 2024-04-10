@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import "../../../../../../../styles/FormEdit.css";
+import "@styles/styles/FormEdit.css";
 
 export default function EducationalExp({ educationalExp, setEducationalExp }) {
   return (

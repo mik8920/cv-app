@@ -1,7 +1,8 @@
-import "../../../styles/App.css";
+import "@styles/styles/App.css";
 import CVEditor from "./components/CVEditor/CVEditor";
 import CVPreview from "./components/CVPreview/CVPreview";
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [generalInfo, setGeneralInfo] = useState({
@@ -14,13 +15,14 @@ function App() {
     studyTitle: "",
     studyDate: "",
   });
-  const [practicalExp, setPracticalExp] = useState({
+  const [practicalExp, setPracticalExp] = useState([{
+    id:uuidv4(),
     companyName: "",
     positionTitle: "",
     jobResponsibilities: "",
     startWorkDate: "",
     endWorkDate: "",
-  });
+  }]);
   const [editing, setEditing] = useState(true);
 
   const handleEditing = () => {

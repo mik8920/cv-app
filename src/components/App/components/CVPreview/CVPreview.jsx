@@ -1,22 +1,21 @@
 /* eslint-disable react/prop-types */
-import "../../../../../styles/Button.css";
-import "../../../../../styles/FormPreview.css";
+import "@styles/styles/Button.css";
+import "@styles/styles/FormPreview.css";
 import EducationalExpPreview from "./components/EducationalExpPreview/EducationalExpPreview";
 import GeneralInfoPreview from "./components/GeneralnfoPreview/GeneralInfoPreview";
 import PracticalExpPreview from "./components/PracticalExpPreview/PracticalExpPreview";
 
 export default function CVPreview({
   handleEditing,
-
   generalInfo,
   educationalExp,
-  practialExp,
+  practicalExp,
 }) {
   return (
     <section className="preview-container">
       <GeneralInfoPreview generalInfo={generalInfo} />
       <EducationalExpPreview educationalExp={educationalExp} />
-      <PracticalExpPreview practialExp={practialExp} />
+      <PracticalExpPreview practicalExp={practicalExp} />
 
       <button onClick={handleEditing}>Edit</button>
     </section>

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import "../../../../../../../styles/FormPreview.css";
+import "@styles/styles/FormPreview.css";
 
 export default function GeneralInfoPreview({ generalInfo }) {
   return (
