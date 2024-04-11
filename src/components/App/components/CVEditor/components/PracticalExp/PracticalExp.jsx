@@ -48,7 +48,7 @@ export default function PracticalExp({ practicalExp, setPracticalExp }) {
                             <label htmlFor="compamy-name">Company Name:</label>
                             <input
                               type="text"
-                              value={practicalExp.companyName}
+                              value={exp.companyName}
                               id="company-name"
                               name='companyName'
                               onChange={(e) =>
@@ -62,7 +62,7 @@ export default function PracticalExp({ practicalExp, setPracticalExp }) {
                             <label htmlFor="position-title">Position Title:</label>
                             <input
                               type="text"
-                              value={practicalExp.positionTitle}
+                              value={exp.positionTitle}
                               id="position-title"
                               name="positionTitle"
                               onChange={(e) =>
@@ -76,7 +76,7 @@ export default function PracticalExp({ practicalExp, setPracticalExp }) {
                             <label htmlFor="job-responsibilities">Job Responsibilities:</label>
                             <textarea
                               type="text"
-                              value={practicalExp.jobResponsibilities}
+                              value={exp.jobResponsibilities}
                               id="job-responsibilities"
                               name="jobResponsibilities"
                               onChange={(e) =>
@@ -90,7 +90,7 @@ export default function PracticalExp({ practicalExp, setPracticalExp }) {
                             <label htmlFor="start-date">Start Date:</label>
                             <input
                               type="date"
-                              value={practicalExp.startWorkDate}
+                              value={exp.startWorkDate}
                               id="start-date"
                               name="startWorkDate"
                               onChange={(e) =>
@@ -102,7 +102,7 @@ export default function PracticalExp({ practicalExp, setPracticalExp }) {
                             <label htmlFor="end-date">End Date:</label>
                             <input
                               type="date"
-                              value={practicalExp.endWorkDate}
+                              value={exp.endWorkDate}
                               id="end-date"
                               name="endWorkDate"
                               onChange={(e) =>

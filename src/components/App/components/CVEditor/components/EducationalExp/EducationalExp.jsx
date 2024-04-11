@@ -29,6 +29,7 @@ export default function EducationalExp({ educationalExp, setEducationalExp }) {
     setEducationalExp(newEduExp);
   };
 
+
   return (
     <div className="form-container-edu-exp">
       <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -43,32 +44,35 @@ export default function EducationalExp({ educationalExp, setEducationalExp }) {
                 <label htmlFor="school-name">School Name:</label>
                 <input
                   type="text"
-                  value={educationalExp.schoolName}
+                  value={exp.schoolName}
                   id="school-name"
+                  name="schoolName"
                   onChange={(e) => handleExpEdit(e, exp.id)}
                   placeholder="MIT"
-                ></input>
+                />
               </div>
 
               <div className="form-field">
                 <label htmlFor="study-title">Title of study:</label>
                 <input
                   type="text"
-                  value={educationalExp.studyTitle}
+                  value={exp.studyTitle}
                   id="study-title"
+                  name="studyTitle"
                   onChange={(e) => handleExpEdit(e, exp.id)}
                   placeholder="BSc Computer Science"
-                ></input>
+                />
               </div>
 
               <div className="form-field">
                 <label htmlFor="study-date">Date of study:</label>
                 <input
                   type="date"
-                  value={educationalExp.studyDate}
+                  value={exp.studyDate}
                   id="study-date"
+                  name="studyDate"
                   onChange={(e) => handleExpEdit(e, exp.id)}
-                ></input>
+                />
               </div>
               {educationalExp.length > 1 && (
                 <button className="delBtn"

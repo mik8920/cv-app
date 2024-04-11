@@ -1,35 +1,40 @@
 /* eslint-disable react/prop-types */
 import "@styles/styles/FormPreview.css";
-import { Fragment } from "react";
 
 export default function PracticalExpPreview({ practicalExp }) {
   return (
     <div className="preview-container-practical-exp">
       <h3>Practical Experience Preview</h3>
-      {practicalExp.map((exp) => {
+      {practicalExp.map((exp, index) => {
         return (
-          <Fragment key={exp.id}>
+          <div
+            style={
+              index > 0
+                ? { borderTop: "1px solid lightgrey", paddingTop: "12px" }
+                : {}
+            }
+            key={exp.id}
+          >
             <p>
-              <strong>Company:</strong> {practicalExp.companyName}
+              <strong>Company:</strong> {exp.companyName}
             </p>
 
             <p>
-              <strong>Position Title:</strong> {practicalExp.positionTitle}
+              <strong>Position Title:</strong> {exp.positionTitle}
             </p>
 
             <p>
-              <strong>Job Responsibilities:</strong>{" "}
-              {practicalExp.jobResponsibilities}
+              <strong>Job Responsibilities:</strong> {exp.jobResponsibilities}
             </p>
 
             <p>
-              <strong>Start Date:</strong> {practicalExp.startWorkDate}
+              <strong>Start Date:</strong> {exp.startWorkDate}
             </p>
 
             <p>
-              <strong>End Date:</strong> {practicalExp.endWorkDate}
+              <strong>End Date:</strong> {exp.endWorkDate}
             </p>
-          </Fragment>
+          </div>
         );
       })}
     </div>
